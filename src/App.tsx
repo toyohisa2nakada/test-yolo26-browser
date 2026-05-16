@@ -26,13 +26,13 @@ const ort = (window as any).ort;
 
 let session: any = undefined;
 let smartphone_camera: any = undefined;
-const imageSize = [320, 320];
+const imageSize = [160, 160];
 
 async function runOnnxModel(input: string | ImageData) {
   try {
     const cv = (window as any).cv;
     if (session === undefined) {
-      session = await ort.InferenceSession.create(`/yolo26n_${imageSize[0]}x${imageSize[1]}.onnx`);
+      session = await ort.InferenceSession.create(`${import.meta.env.BASE_URL}yolo26n_${imageSize[0]}x${imageSize[1]}.onnx`);
       console.log('ONNXモデルの読み込みに成功しました。');
     }
 
@@ -182,7 +182,7 @@ function App() {
 
 
         const fileName = 'smartphone_camera.js';
-        const component = await import(/* @vite-ignore */ `/webcamera/${fileName}`);
+        const component = await import(/* @vite-ignore */ `${import.meta.env.BASE_URL}webcamera/${fileName}`);
         let video_info = await component.smartphone_camera.init();
         console.log(video_info)
 
