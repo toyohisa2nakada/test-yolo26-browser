@@ -1,0 +1,5 @@
+Python 3.10.14 | packaged by Anaconda, Inc. | (main, May  6 2024, 19:44:50) [MSC v.1916 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import torch
+>>> print(f"PyTorch Version: {torch.__version__}")
+PyTorch Version: 2.9.1+cpu
