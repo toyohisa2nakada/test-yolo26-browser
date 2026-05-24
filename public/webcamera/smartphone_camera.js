@@ -126,17 +126,6 @@ export const smartphone_camera = {
         ctx.lineWidth = 4;
         ctx.strokeStyle = "#00ff00";
         ctx.strokeRect(0, 0, ...this._settings.canvas.recognition_canvas_wh);
-
-        // 描画テスト
-        /*
-        const c = this._debug_str_p;
-        ctx.fillStyle = "blue";
-        ctx.font = "32px Arial";
-        ctx.fillText(this._debug_str, ...c);
-        ctx.beginPath();
-        ctx.arc(...c, 1, 0, 2 * Math.PI);
-        ctx.fill();
-        */
     },
     get_imageData: function () {
         return this._camera?.get_recognition_imageData();

@@ -127,9 +127,9 @@ export const camera = {
         });
 
         if (this._hammer === undefined) {
-            this._hammer = new Hammer(canvas);
-            this._hammer.get("pan").set({ direction: Hammer.DIRECTION_ALL });
-            this._hammer.get('pinch').set({ enable: true });
+            // this._hammer = new Hammer(canvas);
+            // this._hammer.get("pan").set({ direction: Hammer.DIRECTION_ALL });
+            // this._hammer.get('pinch').set({ enable: true });
         }
         // この関数は、何度か実行される。
         // その実行の都度、handler_infoを保持しておくことにより、
@@ -140,7 +140,7 @@ export const camera = {
             }
             const remover = ({ reset } = {}) => {
                 handler_info.forEach(info => {
-                    this._hammer.off(...info);
+                    this._hammer?.off(...info);
                 });
                 if (reset === true) {
                     add_ev_handlers(get_ev_f);
@@ -173,7 +173,7 @@ export const camera = {
             const handler_info = (get_ev_f?.(remover) ?? []).map(
                 ([evname, handler]) => [evname, create_wrapper(handler)]);
             handler_info.forEach(info => {
-                this._hammer.on(...info);
+                this._hammer?.on(...info);
             });
 
         };

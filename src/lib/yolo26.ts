@@ -155,7 +155,7 @@ async function renderResult(canvasId: string, input: string | ImageData, results
   }
   yolov8_postprocess_nms(results).forEach(obj => {
     ctx.strokeStyle = 'red';
-    ctx.lineWidth = 2;
+    ctx.lineWidth = 1;
     ctx.strokeRect(...(obj.bbox as [number, number, number, number]));
     ctx.fillStyle = 'red';
     ctx.font = '14px sans-serif';
