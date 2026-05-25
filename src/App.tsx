@@ -1,9 +1,7 @@
 import './App.css'
 import { SmartphoneCamera } from './components/SmartphoneCamera';
 import { runOnnxModel } from './lib/yolo26';
-
 function App() {
-
   return (
     <>
       <canvas id="outputCanvas" style={{ position: 'relative', zIndex: 10 }} />
@@ -11,5 +9,4 @@ function App() {
     </>
   )
 }
-
 export default App
